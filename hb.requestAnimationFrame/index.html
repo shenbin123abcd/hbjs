@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #stop{
+            width: 100px;
+            height: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<button id="stop">stop</button>
+
+<script>
+    document.write('<script type="text/javascript" src="hb.raf-compiled.js?v='+new Date().getTime()+'"><\/script>');
+</script>
+<script>
+    var a=1;
+    var raf1=raf.init()
+    var timer1=raf1.start(function(){
+        a++;
+        console.log('a',a)
+//        console.log(timer)
+
+//        console.log(raf.cancel)
+        if(a==10){
+            raf1.cancel(timer1)
+        }
+    },1000)
+
+    var raf2=raf.init()
+    var b=10;
+    var timer2=raf2.start(function(){
+        b+=30;
+        console.log('b',b)
+//        console.log(timer)
+//        console.log(raf.cancel)
+        if(b>200){
+            raf2.cancel(timer2)
+        }
+    },1000)
+
+
+document.querySelector("#stop").addEventListener('click',function(){
+    raf1.cancel(timer2)
+},false)
+
+
+
+</script>
+</body>
+</html>

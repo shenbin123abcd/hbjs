@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../../node_modules/weui/dist/style/weui.css">
+    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../../hb.js"></script>
+</head>
+<body>
+<button id="show">show</button>
+
+<button id="showShareGuide">showShareGuide</button>
+<button id="guideDownload">guideDownload</button>
+
+<script>
+    $("#show").on('click',function(){
+        hb.lib.weui.loading.show();
+    });
+    $("#showShareGuide").on('click',function(){
+        hb.lib.weui.guideShare.show();
+    });
+    $("#guideDownload").on('click',function(){
+        hb.lib.weui.guideDownload.show();
+    });
+</script>
+</body>
+</html>

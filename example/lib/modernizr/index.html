@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../modernizr-custom.js"></script>
+    <script src="//cdn.bootcss.com/detectizr/2.2.0/detectizr.min.js"></script>
+    <script src="../../../hb.Modernizr.detects.js"></script>
+</head>
+<body>
+<script>
+    Modernizr.on(['chrome','windows'], function( result ) {
+        if (result) {
+            // the browser has flash
+            console.log('chrome')
+        } else {
+            // the browser does not have flash
+
+        }
+    });
+
+    if (Modernizr.chrome||Modernizr.windows) {
+        console.log('Modernizr.chrome||Modernizr.windows')
+    } else {
+
+    }
+</script>
+</body>
+</html>

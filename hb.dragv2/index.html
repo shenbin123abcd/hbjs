@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zoom</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <style>
+        .outer{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        .inner {
+            width: 500px;
+            height: 500px;
+            background: #88f;
+        }
+    </style>
+</head>
+<body>
+<h2>
+    zoom
+</h2>
+
+<div class="outer" >
+    <div class="inner" id="inner">
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+    </div>
+</div>
+<br>
+<div class="outer" >
+    <div class="inner" id="inner2">
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+        #f88 <br>
+    </div>
+</div>
+
+<script src="//cdn.bootcss.com/hammer.js/2.0.8/hammer.js"></script>
+<script>
+    document.write('<script type="text/javascript" src="hb.dragv2-compiled.js?v='+new Date().getTime()+'"><\/script>');
+</script>
+<script>
+    hbDragv2("#inner",{})
+    hbDragv2("#inner2",{})
+</script>
+</body>
+</html>

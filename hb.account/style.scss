@@ -1,0 +1,167 @@
+@charset "utf-8";
+$breakpoints: (
+        'ip5':  320px,
+        'mi4':  360px,
+        'ip6':  375px,
+        'ip6p':  414px,
+        'laptop':  1360px,
+        'sm':  768px,
+        'md':  992px,
+        'lg':  1200px
+) !default;
+$media-expressions: (
+        'screen': 'screen',
+        'print': 'print',
+        'handheld': 'handheld',
+        'landscape': '(orientation: landscape)',
+        'portrait': '(orientation: portrait)',
+        'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+        'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+) !default;
+
+@import '../node_modules/include-media/dist/include-media';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+@import "../hb.style/css/hbMixin";
+
+$mainColor:#ff409b;
+$pictureMainColor:#b08dfd;
+$companyMainColor:#5C9CF6;
+$caseMainColor:#f3903e;
+$topicMainColor:#ff409b;
+$hotelMainColor:#ff5050;
+$mainTextColor:#666666;
+$ff_chs: Arial,Verdana,Tahoma,'Hiragino Sans GB',Microsoft YaHei,SimSun,sans-serif;
+$ff_chs_h: Arial,Verdana,Tahoma,'Hiragino Sans GB',Microsoft YaHei,SimHei,SimSun,sans-serif;
+
+
+.hb-login {
+  color: $mainTextColor;
+  font-family: $ff_chs;
+  font-size: 14px;
+  line-height: 1.5;
+  width: 374px;
+  height: 428px;
+  position: absolute;
+  z-index: 9999+1;
+  left: 50%;
+  //top: 50%;
+  margin-left: (-374px/2);
+  //margin-top: (-428px/2);
+  background: #ffffff;
+  padding: 57px 37px 0;
+  border-radius: 4px;
+  transition: transform 0.3s ease-out, opacity 0.3s;
+  .hb-login-body &.enter {
+
+  }
+  .hb-login-body &.leave {
+    opacity: 0;
+    transform: translate(0, 25%);
+  }
+}
+
+.hb-login-close {
+  position: absolute;
+  right: 9px;
+  top: 4px;
+  cursor: pointer;
+  &:hover {
+    color: $mainColor;
+  }
+}
+
+.hb-login-title {
+  text-align: center;
+  vertical-align: middle;
+}
+.hb-login-form {
+  margin-top: 55px;
+  position: relative;
+}
+.hb-login-error {
+  position: absolute;
+  top: -25px;
+  height: 20px;
+  line-height: 20px;
+  color: $mainColor;
+}
+
+.hb-login-cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+}
+
+.hb-login-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.3;
+  .ie8 & {
+    filter: alpha(opacity=30);
+  }
+}
+.hb-login-form-group {
+  margin-top: 20px;
+}
+.hb-login-form-control-box {
+  position: relative;
+  .haloIcon {
+    color: #a1a1a1;
+    font-size: 20px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 1;
+  }
+  .haloIcon-phone {
+    font-size: 18px;
+    top: 15px;
+    left: 9px;
+
+  }
+  .haloIcon-lock {
+    top: 15px;
+    left: 9px;
+  }
+}
+.hb-login-form-control{
+  @include hbPlaceholder{
+    color: #a1a1a1;
+  }
+  height: 50px;
+  padding-left: 42px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  @include form-control-focus($mainColor);
+}
+.hb-login-btn{
+  @include button-size(11px, $padding-large-horizontal, 14px, $line-height-large, $btn-border-radius-large);
+  //@include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+  @include button-variant(#ffffff,$mainColor,$mainColor);
+  &.btn{
+    &:active,&:focus{
+      outline: none;
+    }
+  }
+}
+.hb-login-link{
+  color: $mainTextColor;
+  &:hover{
+    //color: $mainColor;
+    color: $mainTextColor;
+    text-decoration: underline;
+  }
+}
+
+
+

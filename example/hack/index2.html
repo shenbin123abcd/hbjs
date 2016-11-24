@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        #b1{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+
+    <script src="../../hb.jsv2/dist/hb.min.js"></script>
+</head>
+<body>
+ret
+<button id="b1">b1</button>
+<!-- Start of KF5 supportbox script -->
+<script type="text/javascript">
+    function setTitle(t) {
+        document.title = t;
+        var i = document.createElement('iframe');
+        i.src = '//m.baidu.com/favicon.ico';
+//        i.src = 'about:blank';
+        i.style.display = 'none';
+        document.body.appendChild(i);
+        i.onload = function() {
+            setTimeout(function(){
+//                i.contentWindow.location.reload()
+                i.remove();
+            }, 0)
+        }
+    }
+document.querySelector("#b1").addEventListener("click",function(){
+
+
+//    history.pushState({ aid: 11}, "dfs","?aid=1");
+    hb.hack.setTitle("我的个人中心");("aaa")
+
+
+},false)
+
+//    document.title='cccc';
+</script>
+<!-- End of KF5 supportbox script -->
+</body>
+</html>

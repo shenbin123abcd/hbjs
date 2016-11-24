@@ -1,0 +1,23 @@
+.hb-login
+    i.haloIcon.haloIcon-times.hb-login-close(hb-login-close)
+    .hb-login-title
+        img(src='http://7jptwn.com2.z0.glb.qiniucdn.com/hb-login-title.png').img
+    form.hb-login-form(hb-login-form)
+        .hb-login-error(hb-login-error)
+        .hb-login-form-group
+            .hb-login-form-control-box
+                i.haloIcon.haloIcon-phone
+                input(type='text',placeholder='幻熊通行证(手机号)',hb-login-phone).form-control.hb-login-form-control
+        .hb-login-form-group
+            .hb-login-form-control-box
+                i.haloIcon.haloIcon-lock
+                input(type='password',placeholder='密码',hb-login-password).form-control.hb-login-form-control
+        .hb-login-form-group
+            button(type='submit').btn.btn-block.hb-login-btn 登录
+        .hb-login-form-group.clearfix
+            a(href='http://account.halobear.com/public/forget/',target='_blank').hb-login-link.pull-left 忘记密码
+            a(href='http://account.halobear.com/public/register/',target='_blank').hb-login-link.pull-right 幻熊通行证注册
+
+
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="company-rank-header" id="area-nav">
+    <a href="?aid=3" class="item" id="area-3">
+        <span class="text">华东赛区</span>
+    </a><a href="?aid=4" class="item" id="area-4">
+    <span class="text">华南赛区</span>
+</a><a href="?aid=5" class="item" id="area-5">
+    <span class="text">华中赛区</span>
+</a><a href="?aid=1" class="item" id="area-1">
+    <span class="text">华北赛区</span>
+</a><a href="?aid=6" class="item" id="area-6">
+    <span class="text">西南赛区</span>
+</a><a href="?aid=7" class="item" id="area-7">
+    <span class="text">西北赛区</span>
+</a><a href="?aid=2" class="item" id="area-2">
+    <span class="text">东北赛区</span>
+</a>
+</div>
+
+<script src="../../node_modules/jquery/dist/jquery.js"></script>
+<script src="../../dist/hb.min.js"></script>
+<script>
+$("#area-nav a").on('click',function(){
+    console.log($(this).children().text());
+//    console.log(location.href.split("?")[0]);
+//    return false;
+    var title = $(this).children().text();
+    var url = hb.location.url();
+    history.pushState({ title: title }, title,$(this).attr('href'));
+    return false;
+});
+$(window).on('popstate',function(event){
+    var url = hb.location.url();
+    console.log(url)
+    console.log(history.state)
+    console.log(event.state)
+    console.log(event)
+    console.log(event.originalEvent)
+
+
+});
+window.addEventListener('popstate', function(evt){
+    console.log(event.state)
+    console.log(event)
+
+
+}, false);
+</script>
+</body>
+</html>

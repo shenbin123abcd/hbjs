@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>seat</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        .seat-list-box{
+            overflow: hidden;
+            height: 200px;
+        }
+        .seat-list{
+            background: #dddddd;
+            width: 600px;
+        }
+
+        .seat-row{
+            display: table;
+            padding: 10px;
+        }
+        .seat-row:after{
+            content: '';
+            clear: both;
+        }
+        .seat-cell{
+            padding: 5px;
+            font-size: 12px;
+            background: #ff9988;
+            float: left;
+            margin: 5px;
+        }
+        .seat-cell-no{
+            color: transparent;
+        }
+        .seat-cell.active{
+            background: #63ab38;
+        }
+    </style>
+    </head>
+<body>
+<h2>
+    seat
+</h2>
+
+<!--<img src="seat.svg" alt="">-->
+
+
+<div id="example" ></div>
+
+
+
+<script src="//cdn.bootcss.com/react/15.1.0/react.js"></script>
+<script src="//cdn.bootcss.com/react/15.1.0/react-dom.js"></script>
+<script src="//cdn.bootcss.com/classnames/2.2.5/index.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+<script src="../dist/hb.min.js"></script>
+<script src="//cdn.bootcss.com/hammer.js/2.0.8/hammer.js"></script>
+
+
+<script>
+    document.write('<script type="text/javascript" src="../hb.drag/hb.drag-compiled.js?v='+new Date().getTime()+'"><\/script>');
+</script>
+<script>
+    document.write('<script type="text/javascript" src="hb.react.seat-compiled.js?v='+new Date().getTime()+'"><\/script>');
+</script>
+
+
+<script>
+    var fakedata={"user":"","showInfo":{"movieId":246177,"cinemaId":7,"showId":69624,"desc":"","price":25.0,"showDate":"2016-06-21","cinemaName":"万达电影城(金桥店)","hallName":"1号厅","hallId":"1","movieName":"X战警：天启","showTime":"今天 6月21日21:30","seqNo":"201606210069624","buyNumLimit":4},"sections":[{"sectionName":"默认场区","rows":6,"sectionId":"01","columns":13,"seatRows":[{"seats":[{"rowId":"1","rowNum":1,"columnId":"1","seatNo":"1,1","columnNum":0,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"2","seatNo":"1,2","columnNum":1,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"3","seatNo":"1,3","columnNum":2,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"4","seatNo":"1,4","columnNum":3,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"5","seatNo":"1,5","columnNum":4,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"6","seatNo":"1,6","columnNum":5,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"7","seatNo":"1,7","columnNum":6,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"8","seatNo":"1,8","columnNum":7,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"9","seatNo":"1,9","columnNum":8,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"","seatNo":"","columnNum":9,"type":"E"},{"rowId":"1","rowNum":1,"columnId":"","seatNo":"","columnNum":10,"type":"E"},{"rowId":"1","rowNum":1,"columnId":"10","seatNo":"1,12","columnNum":11,"type":"N"},{"rowId":"1","rowNum":1,"columnId":"11","seatNo":"1,13","columnNum":12,"type":"N"}],"columns":13,"rowId":"1","rowNum":1},{"seats":[{"rowId":"2","rowNum":2,"columnId":"1","seatNo":"2,1","columnNum":0,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"2","seatNo":"2,2","columnNum":1,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"3","seatNo":"2,3","columnNum":2,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"4","seatNo":"2,4","columnNum":3,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"5","seatNo":"2,5","columnNum":4,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"6","seatNo":"2,6","columnNum":5,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"7","seatNo":"2,7","columnNum":6,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"8","seatNo":"2,8","columnNum":7,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"9","seatNo":"2,9","columnNum":8,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"","seatNo":"","columnNum":9,"type":"E"},{"rowId":"2","rowNum":2,"columnId":"","seatNo":"","columnNum":10,"type":"E"},{"rowId":"2","rowNum":2,"columnId":"10","seatNo":"2,12","columnNum":11,"type":"N"},{"rowId":"2","rowNum":2,"columnId":"11","seatNo":"2,13","columnNum":12,"type":"N"}],"columns":13,"rowId":"2","rowNum":2},{"seats":[{"rowId":"3","rowNum":3,"columnId":"1","seatNo":"3,1","columnNum":0,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"2","seatNo":"3,2","columnNum":1,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"3","seatNo":"3,3","columnNum":2,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"4","seatNo":"3,4","columnNum":3,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"5","seatNo":"3,5","columnNum":4,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"6","seatNo":"3,6","columnNum":5,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"7","seatNo":"3,7","columnNum":6,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"8","seatNo":"3,8","columnNum":7,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"9","seatNo":"3,9","columnNum":8,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"","seatNo":"","columnNum":9,"type":"E"},{"rowId":"3","rowNum":3,"columnId":"","seatNo":"","columnNum":10,"type":"E"},{"rowId":"3","rowNum":3,"columnId":"10","seatNo":"3,12","columnNum":11,"type":"N"},{"rowId":"3","rowNum":3,"columnId":"11","seatNo":"3,13","columnNum":12,"type":"N"}],"columns":13,"rowId":"3","rowNum":3},{"seats":[{"rowId":"4","rowNum":4,"columnId":"1","seatNo":"4,1","columnNum":0,"type":"N"},{"rowId":"4","rowNum":4,"columnId":"2","seatNo":"4,2","columnNum":1,"type":"N"},{"rowId":"4","rowNum":4,"columnId":"3","seatNo":"4,3","columnNum":2,"type":"N"},{"rowId":"4","rowNum":4,"columnId":"4","seatNo":"4,4","columnNum":3,"type":"LK"},{"rowId":"4","rowNum":4,"columnId":"5","seatNo":"4,5","columnNum":4,"type":"LK"},{"rowId":"4","rowNum":4,"columnId":"6","seatNo":"4,6","columnNum":5,"type":"N"},{"rowId":"4","rowNum":4,"columnId":"7","seatNo":"4,7","columnNum":6,"type":"LK"},{"rowId":"4","rowNum":4,"columnId":"8","seatNo":"4,8","columnNum":7,"type":"LK"},{"rowId":"4","rowNum":4,"columnId":"","seatNo":"","columnNum":8,"type":"E"},{"rowId":"4","rowNum":4,"columnId":"","seatNo":"","columnNum":9,"type":"E"},{"rowId":"4","rowNum":4,"columnId":"","seatNo":"","columnNum":10,"type":"E"},{"rowId":"4","rowNum":4,"columnId":"","seatNo":"","columnNum":11,"type":"E"},{"rowId":"4","rowNum":4,"columnId":"","seatNo":"","columnNum":12,"type":"E"}],"columns":13,"rowId":"4","rowNum":4},{"seats":[{"rowId":"5","rowNum":5,"columnId":"1","seatNo":"5,1","columnNum":0,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"2","seatNo":"5,2","columnNum":1,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"3","seatNo":"5,3","columnNum":2,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"4","seatNo":"5,4","columnNum":3,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"5","seatNo":"5,5","columnNum":4,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"6","seatNo":"5,6","columnNum":5,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"7","seatNo":"5,7","columnNum":6,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"8","seatNo":"5,8","columnNum":7,"type":"N"},{"rowId":"5","rowNum":5,"columnId":"","seatNo":"","columnNum":8,"type":"E"},{"rowId":"5","rowNum":5,"columnId":"","seatNo":"","columnNum":9,"type":"E"},{"rowId":"5","rowNum":5,"columnId":"","seatNo":"","columnNum":10,"type":"E"},{"rowId":"5","rowNum":5,"columnId":"","seatNo":"","columnNum":11,"type":"E"},{"rowId":"5","rowNum":5,"columnId":"","seatNo":"","columnNum":12,"type":"E"}],"columns":13,"rowId":"5","rowNum":5},{"seats":[{"rowId":"6","rowNum":6,"columnId":"","seatNo":"","columnNum":0,"type":"E"},{"rowId":"6","rowNum":6,"columnId":"1","seatNo":"6,2","columnNum":1,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"2","seatNo":"6,3","columnNum":2,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"","seatNo":"","columnNum":3,"type":"E"},{"rowId":"6","rowNum":6,"columnId":"3","seatNo":"6,5","columnNum":4,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"4","seatNo":"6,6","columnNum":5,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"5","seatNo":"6,7","columnNum":6,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"6","seatNo":"6,8","columnNum":7,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"7","seatNo":"6,9","columnNum":8,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"8","seatNo":"6,10","columnNum":9,"type":"N"},{"rowId":"6","rowNum":6,"columnId":"","seatNo":"","columnNum":10,"type":"E"},{"rowId":"6","rowNum":6,"columnId":"","seatNo":"","columnNum":11,"type":"E"},{"rowId":"6","rowNum":6,"columnId":"","seatNo":"","columnNum":12,"type":"E"}],"columns":13,"rowId":"6","rowNum":6}]}]}
+
+
+    $.ajax('http://10.0.1.29:1111/seat').then(function(res){
+        console.log(res)
+//
+//        //ReactDOM.render(
+//        //    <seat date={new Date()} />,
+//        //    document.getElementById('example')
+//        //);
+////        hb.seat("#seat-box",res)
+    });
+
+
+</script>
+
+</body>
+</html>

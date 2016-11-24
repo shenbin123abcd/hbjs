@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wrapper{
+            width: 100px;
+            height: 100px;
+            background: #ff8888;
+        }
+    </style>
+</head>
+<body ng-controller="main">
+
+<div id="wrapper" hb-ellipsis hb-ellipsis-val="t" >
+    {{t}}
+</div>
+
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+<script src="../../hb.jquery.js"></script>
+
+<script>
+
+
+        angular.module('app',[]).controller('main',['$scope',function($scope){
+            $scope.t='  空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；';
+
+        }])
+        .directive('hbEllipsis',function(){
+            var linkFunction=function($scope, $element, $attrs){
+                $scope.$watch('hbEllipsisVal',function(val) {
+                    if (val) {
+                        $element.hb_ellipsis()
+                    }
+                })
+            };
+            return{
+                restrict: 'AE',
+                scope: {
+                    hbEllipsisVal:'='
+                },
+                link:linkFunction
+            }
+        });
+
+
+</script>
+</body>
+</html>

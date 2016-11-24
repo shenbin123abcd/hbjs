@@ -1,0 +1,23 @@
+{
+  "name": "hb.js",
+  "description": "",
+  "main": "hb.js",
+  "authors": [
+    "野猪yz <1746534101@qq.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Ashley2014/hb.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "qiniu": "^1.0.15-beta"
+  },
+  "devDependencies": {
+    "js-url": "^2.3.0"
+  }
+}

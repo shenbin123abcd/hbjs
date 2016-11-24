@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body ng-controller="main">
+<canvas id="myChart" width="400" height="400"></canvas>
+<div chart=""></div>
+
+
+<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+<script src="//cdn.bootcss.com/Chart.js/1.0.2/Chart.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+
+
+
+<script>
+
+
+        angular.module('app',[]).controller('main',['$scope',function($scope){
+            $scope.t='  空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；空间的如果你热让冷热冷热；';
+
+        }])
+
+
+</script>
+<script src="chart.directive.js"></script>
+
+<script>
+    // Get the context of the canvas element we want to select
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myNewChart = new Chart(ctx).PolarArea({});
+
+</script>
+</body>
+</html>

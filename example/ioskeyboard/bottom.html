@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+    <style>
+        .bg{
+            height: 1000px;
+            background: #f98;
+        }
+        .bg2{
+            height: 1000px;
+            background: #fc8;
+        }
+        .input{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="bg">
+
+</div>
+$(window).height()
+<input id="input" class="input" type="text" >
+window.height
+<input id="input2" class="input" type="text" >
+$(window).innerHeight()
+<input id="input-jq-innerHeight" class="input" type="text" >
+window.innerHeight
+<input id="input-innerHeight" class="input" type="text" >
+document.height
+<input id="input-document" class="input" type="text" >
+$(window).scrollTop()
+<input id="input3" class="input" type="text" >
+
+<script>
+    $(window).on('scroll',function(){
+        $("#input").val($(window).height())
+        $("#input-jq-innerHeight").val($(window).innerHeight())
+        $("#input-document").val($(document).height())
+        $("#input-innerHeight").val(window.innerHeight)
+        $("#input2").val(window.height)
+        $("#input3").val($(window).scrollTop())
+
+//        console.log($(window).height())
+    });
+
+</script>
+</body>
+</html>

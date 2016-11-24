@@ -1,0 +1,127 @@
+@charset "utf-8";
+@import "hbVariables";
+@import "hbReset";
+@import "hbAnimated";
+
+body{
+  font-size: 14px;
+  line-height: 1.5;
+}
+.haloIcon{
+  display: inline-block;
+}
+.btn-color-main {
+  @include button-variant($mainColor, #fff,$mainColor);
+  border-radius: 0;
+
+  &:active,
+  &.active {
+    @include box-shadow(none);
+    background-color: #fff;
+    &:focus,
+    &:focus,
+    &:hover,
+    &.hover {
+      background-color: #fff;
+    }
+  }
+
+
+  &:focus,
+  &.focus {
+    color: $mainColor;
+    background-color: #fff;
+    border-color: darken($mainColor, 25%);
+  }
+  &:hover {
+    color: $mainColor;
+    background-color: #fff;
+    border-color: darken($mainColor, 12%);
+  }
+  &.disabled,
+  &[disabled]{
+    color: #666666;
+    background-color: #fff;
+    border-color: #666666;
+    &:focus,
+    &.focus {
+      border-color: #666666;
+    }
+  }
+
+}
+
+.btn-size-main {
+  @include button-size(7px, $padding-large-horizontal, 16px, $line-height-large, $btn-border-radius-large);
+}
+.btn-color-second {
+  @include button-variant(#fff, $mainColor, $mainColor);
+  border-radius: 0;
+  &:active,
+  &.active {
+    @include box-shadow(none);
+    //background-color: #fff;
+    //&:focus,
+    //&:focus,
+    //&:hover,
+    //&.hover {
+    //  background-color: #fff;
+    //}
+  }
+  //
+  //&:focus,
+  //&.focus {
+  //  color: $mainColor;
+  //  background-color: $mainColor;
+  //  border-color: darken($mainColor, 25%);
+  //}
+  //&:hover {
+  //  color: $mainColor;
+  //  background-color: $mainColor;
+  //  border-color: darken($mainColor, 12%);
+  //}
+  &.disabled,
+  &[disabled] {
+    color: #666666;
+    //background-color: #666666;
+    border-color: #666666;
+    &:focus,
+    &.focus {
+      border-color: #666666;
+    }
+  }
+
+}
+
+
+.btn-size-second {
+  //@include button-size(7px, $padding-large-horizontal, 16px, $line-height-large, $btn-border-radius-large);
+  padding: 11px 6px;
+  font-size: 15px;
+
+
+}
+
+.form-control-main{
+  @include hbPlaceholder{
+    color: #a0a0a0;
+  }
+
+
+  @include form-control-focus($mainColor);
+  height: 44px;
+  box-shadow: none;
+  border-radius: 0;
+  &:focus {
+    $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 3px lighten($mainColor, 20%);
+    @include box-shadow($shadow);
+  }
+}
+
+
+.loading-box{
+  padding: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    $('#fileupload').fileupload({
+        //dataType: 'json',
+        url:'http://up.qiniu.com',
+        //url:'http://10.0.1.29:1111/file/upload',
+        formData:{
+            aa:'ewr'
+        },
+        singleFileUploads:true,
+        done: function (e, data) {
+            console.log('done',e, data);
+
+        },
+        fail: function (e, data) {
+            console.log('fail',e, data);
+
+        },
+        progressall: function (e, data) {
+            //var progress = parseInt(data.loaded / data.total * 100, 10);
+            console.log('progressall',parseInt(data.loaded / data.total * 100, 10));
+        },
+        //always:function (e, data) {
+        //    console.log('always',e, data);
+        //},
+        //processstart:function (e) {
+        //    console.log('processstart',e);
+        //},
+        //process:function (e, data) {
+        //    console.log('process',parseInt(data.loaded / data.total * 100, 10));
+        //},
+
+    });
+/*
+    vm.options={
+        //dataType: 'json',
+        //type: "POST",
+        url:'http://up.qiniu.com',
+        //url:'http://10.0.1.29:1111/file/upload',
+        formData:{
+             aa:'ewr'
+         },
+        singleFileUploads:true,
+        autoUpload: true,
+        done: function (e, data) {
+            // data.result
+            // data.textStatus;
+            // data.jqXHR;
+            //console.log('done', data.result);
+            vm.imgData=data.result;
+        },
+        fail: function (e, data) {
+            console.log('fail', data);
+        },
+        progressall: function (e, data) {
+            //var progress = parseInt(data.loaded / data.total * 100, 10);
+            //console.log('progressall',parseInt(data.loaded / data.total * 100, 10));
+        },
+    };
+*/
+</script>
+</body>
+</html>

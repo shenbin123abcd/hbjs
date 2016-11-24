@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="http://10.0.1.29/hb.js/dist/hb.min.js"></script>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        .input{
+            position: fixed;
+            height: 50px;
+            top: 0px;
+            left: 0;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+        .c{
+            height: 100%;
+        }
+        .keyboard-show .input{
+            position: relative;
+            margin-bottom: -50px;
+        }
+        .thing{
+            height: 1500px;
+            background: #f68;
+            background-image: linear-gradient(#f68,#fd8);
+        }
+        .bottom-thing{
+            height: 100px;
+            background: #668;
+        }
+    </style>
+</head>
+<body>
+<div  class="input" id="input-box">
+    <input id="input" class="c" type="text">
+</div>
+
+
+<div class="thing"></div>
+<div class="bottom-thing"></div>
+
+<script>
+
+</script>
+<script src="hb.vKeyboard.js"></script>
+</body>
+</html>

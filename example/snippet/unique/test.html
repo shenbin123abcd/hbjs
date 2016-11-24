@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//cdn.bootcss.com/jasmine/2.4.1/jasmine.css" rel="stylesheet">
+    <script src="//cdn.bootcss.com/jasmine/2.4.1/jasmine.js"></script>
+    <script src="//cdn.bootcss.com/jasmine/2.4.1/jasmine-html.js"></script>
+    <script src="//cdn.bootcss.com/jasmine/2.4.1/boot.js"></script>
+    <script src="unique-compiled.js"></script>
+</head>
+<body>
+<script>
+    describe("unique2", function() {
+        it("shoud eq", function() {
+            expect(unique2([1,2,3,4,4,4,5,6])).toEqual([1,2,3,4,5,6]);
+
+        });
+        it("shoud eq", function() {
+            expect(unique2([1,6,4,4,4,4])).toEqual([1,6,4]);
+
+        });
+    });
+
+
+    console.log(unique1([1,2,3,4,4,4,5,6]));
+    console.log(unique2([1,2,3,4,4,4,5,6]));
+</script>
+
+</body>
+</html>

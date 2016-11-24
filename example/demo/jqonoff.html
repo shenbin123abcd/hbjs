@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+<form id="form" style="height: 200px;width: 200px;background: #ff8888;">
+
+</form>
+<button id="bt">off</button>
+
+<script>
+    var $form=$("#form");
+    var aaa;
+//    $form.on('click',function aaa(){
+//        alert("Hello")
+//    });
+//    $form.on('click',function(){
+//        alert("another")
+//    });
+    function bbb(event){
+        console.log(event)
+
+        console.log(event.data)
+    }
+
+    var ccc=function(){};
+
+    $form.on('click',{a:1,b:2},bbb);
+
+    $form.on('click',function ccc(){
+
+    });
+    $("#bt").on('click',function(){
+        $form.off('click',bbb)
+    })
+
+
+
+    console.log($._data($form[0],"events"));
+</script>
+</body>
+</html>

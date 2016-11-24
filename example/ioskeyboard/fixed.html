@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+        body{
+            margin: 0;
+        }
+        .input{
+            position: fixed;
+            height: 50px;
+            top: 0px;
+            left: 0;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+        .c{
+            height: 100%;
+        }
+        .keyboard{
+            position: relative;
+            margin-bottom: -50px;
+        }
+        .thing{
+            height: 1500px;
+            background: #f68;
+            background-image: linear-gradient(#f68,#fd8);
+        }
+        .bottom-thing{
+            height: 100px;
+            background: #668;
+        }
+    </style>
+</head>
+<body>
+<div  class="input" id="input-box">
+    <input id="input" class="c" type="text">
+</div>
+
+
+<div class="thing"></div>
+<div class="bottom-thing"></div>
+
+<script>
+
+//alert('a')
+    var initialScreenSize = window.innerHeight;
+
+document.querySelector("#input").addEventListener('focus',function(){
+//    document.querySelector("#input").className='input keyboard'
+
+//    console.log(window.pageYOffset);
+
+    if (window.pageYOffset==0){
+        if(navigator.userAgent.match(/(MicroMessenger)/g)){
+            var addKeyboard=setInterval(cal,10);
+            function cal(){
+//        document.querySelector("body").appendChild(document.createTextNode(window.innerHeight+' '))
+                if(window.innerHeight<initialScreenSize){
+                    document.querySelector("#input-box").className='input keyboard'
+                    window.clearInterval(addKeyboard)
+                }
+            }
+        }else{
+            document.querySelector("#input-box").className='input keyboard'
+        }
+
+    }else{
+        document.querySelector("#input-box").className='input keyboard'
+    }
+
+
+})
+document.querySelector("#input").addEventListener('blur',function(){
+    document.querySelector("#input-box").className='input'
+
+//    var removeKeyboard=setInterval(function(){
+////        document.querySelector("body").appendChild(document.createTextNode(window.innerHeight+' '))
+//        if(window.innerHeight==initialScreenSize){
+//            document.querySelector("#input").className='input'
+//            window.clearInterval(removeKeyboard)
+//        }
+//    },1);
+
+})
+
+
+</script>
+</body>
+</html>

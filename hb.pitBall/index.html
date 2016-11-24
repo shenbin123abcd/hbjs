@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Title</title>
+</head>
+<body>
+<style>
+
+    #canvas{
+        top: 150px;
+        left: 0;
+        position:absolute;
+        display:block;
+    }
+</style>
+<canvas id="canvas" width="640" height="360">Man, this page would look SO awesome if your browser supported canvas.</canvas>
+<div id="info">
+    <div>Tilt Alpha: <span id="tiltAlpha"></span></div>
+    <div>Tilt Beta: <span id="tiltBeta"></span></div>
+    <div>Tilt Gamma: <span id="tiltGamma"></span></div>
+    <div>Tilt accel X: <span id="tiltX"></span></div>
+    <div>Tilt accel Y: <span id="tiltY"></span></div>
+    <div>Orientation: <span id="orientation"></span></div>
+    <div>rotation: <span id="rotation"></span></div>
+</div>
+
+
+<script>
+    document.write('<script type="text/javascript" src="hb.pitBall-compiled.js?v='+new Date().getTime()+'"><\/script>');
+</script>
+</body>
+</html>

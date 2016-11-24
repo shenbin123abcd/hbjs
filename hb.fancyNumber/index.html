@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>zoom</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <style>
+        body{
+            
+        }
+        .hb-fancy-num{
+            display: inline-block;
+            margin: 0 5px;
+            width: 5px;
+            height: 10px;
+            background: #ff5544;
+        }
+    </style>
+</head>
+<body>
+ewrewr
+<div class="outer" >
+    <div id="num-1" data-number="099"></div>
+</div>
+<br>
+<div class="outer" >
+    <div id="num-2" data-number="123456789"></div>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/3.0.0/jquery.js"></script>
+<script src="../dist/hb.min.js"></script>
+
+<script>
+    document.write('<script type="text/javascript" src="hb.fancyNumber-compiled.js?v='+new Date().getTime()+'"><\/script>');
+</script>
+<script>
+
+    hb.fancyNumber("#num-1",{});
+    hb.fancyNumber("#num-2",{
+        containerClass:'bbbb'
+    });
+
+</script>
+</body>
+</html>
